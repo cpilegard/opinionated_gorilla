@@ -12,7 +12,9 @@
 }
 
 #body {
-  background-color: rgba(21, 105, 199,.8);
+  background-image: url('../images/gorilla.jpg');
+  
+    /*rgba(21, 105, 199,.8);*/
   margin-top: 60px;
   padding-top: 80px;
   padding-bottom: 600px;
