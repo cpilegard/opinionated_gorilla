@@ -1,25 +1,35 @@
 .container {
+  /*width: 100%;*/
+  /*background-color: rgba(21, 105, 199,.8);*/
+}
+
+.navbar-inner {
+  padding: 8px 0px;
+}
+
+.brand{
+  margin-left: 0px !important;
+}
+
+#body {
+  background-color: rgba(21, 105, 199,.8);
+  margin-top: 60px;
+  padding-top: 80px;
+  padding-bottom: 600px;
 
 }
 
-.navbar {
-  padding-top: 10px;
-}
+#page_top {
 
-/*#right_side_of_nav {
-  position: block;
 }
-*/
-
-#create {
+/*#create {
   float: right;
 }
 
 #login {
   float:right;
-}
+}*/
 
 .dropdown-menu li {
-  background-color: rgba(255,0,0,.5);
   padding: 12px;
 }
