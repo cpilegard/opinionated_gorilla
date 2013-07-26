@@ -11,4 +11,8 @@ $(document).ready(function() {
   $('.nav li').mouseleave(function() {
     $('li').removeClass('active');
   });
+
+  $('.dropdown-toggle').dropdown();
+
+  
 });

@@ -6,6 +6,16 @@
   padding-top: 10px;
 }
 
-#log_in_out {
+/*#right_side_of_nav {
+  position: block;
+}
+*/
+
+#create {
   float: right;
 }
+
+#login {
+  float:right;
+}
+
