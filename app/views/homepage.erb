@@ -1,0 +1,19 @@
+<div>
+  <h1>Welcome to Opinionated Guerilla!</h1>
+
+  <p>Number of surveys taken today:</p>
+  <% t = Time.now %>
+  <% all_surveys = CompletedSurveys.all %>
+  <% todays_surveys = [] %>
+  <% all_surveys.each do |survey|%>
+    <%= if survey.created_at.month == t.month && survey.created_at.day == t.day %>
+
+<h3>Take a current survey:</h3>
+<ul>
+  <% Survey.all.each do |survey| %>
+  <a href="/survey/<%= survey.id %>"><li><%= survey.title %></li></a>
+  <% end %>
+</ul>
+
+
+</div>

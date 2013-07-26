@@ -19,6 +19,11 @@
 
   <title>Opinionated Guerilla</title>
 </head>
+<% if logged_in? %>
+<a href="/sessions/new">Homepage</a>
+<a href="/users/<%= current_user.id %>">My Dashboard</a>
+<a href="/sessions/end">Log Out</a>
+  <% end %>
 <body>
   <%= yield %>
 </body>

@@ -1,12 +1,15 @@
 
 <div class='container'>
   <br />
-  <h1>Hello, pitiable fool # <%= @user.id %></h1>
+  <a href=""></a>
+  <h1>Hello, pitiable fool # <%= current_user.id %></h1>
 
   <ul class='list'>
-    <% @user.surveys.each do |survey| %>
+    <% current_user.surveys.each do |survey| %>
       <li>Survey: <a href="/survey/<%= survey.id %>"><%= survey.title %></a></li>
     <% end %>
   </ul>
+
+  <a href="/survey/new"><h3>Create a new survey</h3></a>
 
 </div>
