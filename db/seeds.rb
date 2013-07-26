@@ -1,0 +1,7 @@
+user = User.create(email: 'test@test.com', password: 'test')
+survey = user.surveys.create(title: 'Team OG')
+question = survey.questions.create(question: 'Who has the best beard?')
+choice1 = question.choices.create(content: 'Dan')
+choice2 = question.choices.create(content: 'Christine')
+choice3 = question.choices.create(content: 'Jesse')
+choice4 = question.choices.create(content: 'Cole')
