@@ -1,7 +1,15 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+	// $choiceField = $('.question_choice').clone();
+	var choice_list = $('.choices');
+
+
+  $('#add-choice').on('click', function(e) {
+  	e.preventDefault();
+  	$("<li class='question_choice'>\
+  		 <p>Choice: <input type='text' name='choices[][choice]'></p>\
+  		 </li>").appendTo(choice_list);
+  	// $choiceField.appendTo(choice_list);
+  });
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
   $('.nav li').mouseover(function () {
@@ -16,5 +24,4 @@ $(document).ready(function() {
   $('.dropdown-menu input, .dropdown-menu label').click(function(e) {
         e.stopPropagation();
     });
-  
 });
