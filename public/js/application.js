@@ -4,4 +4,11 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $('.nav li').mouseover(function () {
+    $(this).addClass('active');
+  });
+
+  $('.nav li').mouseleave(function() {
+    $('li').removeClass('active');
+  });
 });
