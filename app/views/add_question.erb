@@ -1,0 +1,17 @@
+<div class="container">
+  <form action='/survey/<%= @survey.id %>/new' method='post'>
+  	<div class='survey_title'>
+  		<h3><%= @survey.title %></h3>
+  	</div>
+  	<div class='survey_question'>
+  		<p>Question: <input type='text' name='question'></p>
+  		<ul class='choices'>
+  			<li class='question_choice'>
+  				<p>Choice: <input type='text' name='choices[][choice]'></p>
+  			</li>
+  		</ul>
+  		<button id="add-choice">+</button><br>
+  	</div>
+  	<br><input type='submit' value='Create Survey'>
+  </form>
+</div>
