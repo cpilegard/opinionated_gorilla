@@ -1,7 +1,18 @@
 <div class="container">
   <h1>Create a New Survey</h1>
   <form action='/survey' method='post'>
-  	<input type='text' name='title'>
-  	<input type='submit' value='Create Survey'>
+  	<div class='survey_title'>
+  		<h3>Survey Title: <input type='text' name='title'></h3>
+  	</div>
+  	<div class='survey_question'>
+  		<p>Question: <input type='text' name='question'></p>
+  		<ul class='choices'>
+  			<li class='question_choice'>
+  				<p>Choice: <input type='text' name='choices[][choice]'></p>
+  			</li>
+  		</ul>
+  		<button id="add-choice">+</button><br>
+  	</div>
+  	<br><input type='submit' value='Create Survey'>
   </form>
 </div>
