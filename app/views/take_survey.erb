@@ -2,13 +2,16 @@
   <div class="row">
     <div class="span12">
       <br>
+      <form action='/survey/<%= @survey.id %>/submit' method='post'>
       <%@survey.questions.each do |question|%>
-        <%= question.question %>
+        <h3><%= question.question %></h3>
         <% question.choices.each do |choice| %>
-          <br>
-          <%= choice.content %>  
+          <input type="radio" name="<%= question.id %>" value='<%= choice.id %>'><%= choice.content %><br>
         <% end %>
       <% end %>
+      <br>
+      <input type='submit' value='Submit Survey'>
+      </form>
     </div>
   </div>
 </div>
