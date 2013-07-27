@@ -1,11 +1,14 @@
 <div class="container">
 	<h1><%= @survey.title %></h1>
 	<a href='/survey/<%= @survey.id %>/new'>Add Question</a>
+	<% if !@survey.questions.empty? %>
+		<h3>Questions:</h3>
+	<% end %>
 	<% @survey.questions.each do |question| %>
-		<h3><%= question.question %></h3>
+		<h5><%= question.question %></h5>
 		<% question.choices.each do |choice| %>
 			<li><%= choice.content %></li>
 		<% end %>
 	<% end %>
-  <br><p>Todo: stats</p>
+  <br><p>[Todo: stats]</p>
 </div>
