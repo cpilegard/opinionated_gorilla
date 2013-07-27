@@ -1,13 +1,12 @@
-<div>
+<div class="container">
   <h1>Welcome to Opinionated Guerilla!</h1>
 
-<p>Number of surveys taken today:</p>
+  <p>Number of surveys taken today:</p>
 
-<h3>Take a current survey:</h3>
-<ul>
-  <% Survey.all.each do |survey| %>
-  <a href="/survey/<%= survey.id %>/take"><li><%= survey.title %></li></a>
-  <% end %>
-</ul>
-
+  <h3>Take a current survey:</h3>
+  <ul>
+    <% Survey.all.each do |survey| %>
+    <a href="/survey/<%= survey.id %>/take"><li><%= survey.title %></li></a>
+    <% end %>
+  </ul>
 </div>
