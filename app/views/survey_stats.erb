@@ -8,7 +8,10 @@
     <%= erb :_add_photo %>
   </div>
   <% end %>
-	<a href='/survey/<%= @survey.id %>/new'>Add Question</a>
+  <h5>Share this Survey with others:</h5> <a href='/survey/<%=@survey.id%>/take'>/survey/<%=@survey.id%>/take</a>
+  <div class="add_question">
+	   <a href='/survey/<%= @survey.id %>/new'>Add Question</a>
+  </div>
 	<% if !@survey.questions.empty? %>
 		<h3>Questions:</h3>
 	<% end %>

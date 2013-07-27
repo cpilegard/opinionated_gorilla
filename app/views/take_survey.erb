@@ -1,24 +1,23 @@
 <div class="container-fluid">
-   <div class="row-fluid">
-     <div class="span12">
-        <h1><%= @survey.title %></h1>
-          <% if @survey.photo %>
-            <img src='<%= @survey.photo.file %>'><br><br>
-          <% end %>
-       <ol>
-       <form action='/survey/<%= @survey.id %>/submit' method='post'>
-       <%@survey.questions.each do |question|%>
+  <div class="row-fluid">
+    <div class="span12">
+      <h1><%= @survey.title %></h1>
+        <% if @survey.photo %>
+          <img src='<%= @survey.photo.file %>'><br><br>
+        <% end %>
+      <ol>
+      <form action='/survey/<%= @survey.id %>/submit' method='post'>
+      <%@survey.questions.each do |question|%>
         <li><h3><%= question.question %></h3></li>
-         <% question.choices.each do |choice| %>
-          <input class="button" type="radio" name="<%= question.id %>" value='<%= choice.id %>'><h5><%= choice.content %></h5>
+        <% question.choices.each do |choice| %>
+          <input class="button" type="radio" name="<%= question.id %>" value='<%= choice.id %>'><h5 class="survey_choice"><%= choice.content %></h5>
           <br>
-         <% end %>
-       <% end %>
-       <br>
-       <input type='submit' value='Submit Survey'>
-       </form>
-       </ol>
-     </div>
-   </div>
- </div>
+        <% end %>
+      <% end %>
+      <br>
+      <input type='submit' value='Submit Survey'>
+      </form>
+      </ol>
+    </div>
+  </div>
 </div>

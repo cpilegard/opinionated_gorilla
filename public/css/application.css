@@ -37,16 +37,18 @@
   padding: 12px;
 }
 
-.choice{
-  list-style-type: none;
+.survey_choice {
+    padding-left: 10px;
 }
 
 
 h5 {
-  padding-left: 10px;
   display: inline-block;
 }
 
+#add_question {
+  display: block;
+}
 .taken_survey {
   text-decoration: line-through;
 }
