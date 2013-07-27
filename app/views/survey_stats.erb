@@ -1,5 +1,13 @@
 <div class="container">
 	<h1><%= @survey.title %></h1>
+	<% if @survey.photo %>
+		<img src='<%= @survey.photo.file %>'><br><br>
+	<% else %>
+	<div class='add_photo'>
+		<p>Optional: Attach a photo for the survey</p>
+    <%= erb :_add_photo %>
+  </div>
+  <% end %>
 	<a href='/survey/<%= @survey.id %>/new'>Add Question</a>
 	<% if !@survey.questions.empty? %>
 		<h3>Questions:</h3>

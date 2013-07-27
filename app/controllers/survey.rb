@@ -26,3 +26,12 @@ post '/survey/:id/new' do
   end
   redirect to("/survey/#{survey.id}")
 end
+
+post '/photo/:survey_id' do
+  survey = Survey.find(params[:survey_id])
+  photo = Photo.new()
+  photo.file = params[:image]
+  photo.save
+  survey.photo = photo
+  redirect "/survey/#{survey.id}"
+end
