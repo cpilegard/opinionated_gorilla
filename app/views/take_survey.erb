@@ -1,21 +1,18 @@
 <div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span12">
-      <ol>
-      <div class="question">
-        <form action="/survey/<%= @survey.id %>/submit" method="post">
-          <%@survey.questions.each do |question|%>
-            <li><h3><%= question.question %></h3></li>
-            <ol>
-            <% question.choices.each do |choice| %>
-              <li class="choice"><input type="checkbox" name="<%= question.id %>" id="checkbox"><h4><%= choice.content %></h4></li>
-            <% end %>
-            </ol>
-            <input type='submit' value='Submit Survey'>
-          <% end %>  
-          </form>
-      </div>
-      </ol>
-    </div>
-  </div>
+   <div class="row-fluid">
+     <div class="span12">
+       <br>     
+       <form action='/survey/<%= @survey.id %>/submit' method='post'>
+       <%@survey.questions.each do |question|%>
+        <h3><%= question.question %></h3>
+         <% question.choices.each do |choice| %>
+          <input type="radio" name="<%= question.id %>" value='<%= choice.id %>'><%= choice.content %><br>
+         <% end %>
+       <% end %>
+       <br>
+       <input type='submit' value='Submit Survey'>
+       </form>
+     </div>
+   </div>
+ </div>
 </div>

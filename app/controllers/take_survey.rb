@@ -11,5 +11,7 @@ post '/survey/:id/submit' do
     UserChoice.create(user: current_user, choice: chosen)
   end
 
+  CompletedSurvey.create(user: current_user, survey: survey)
+
   redirect '/'
 end
