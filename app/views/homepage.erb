@@ -6,7 +6,7 @@
 <h3>Take a current survey:</h3>
 <ul>
   <% Survey.all.each do |survey| %>
-  <a href="/survey/<%= survey.id %>"><li><%= survey.title %></li></a>
+  <a href="/survey/<%= survey.id %>/take"><li><%= survey.title %></li></a>
   <% end %>
 </ul>
 
