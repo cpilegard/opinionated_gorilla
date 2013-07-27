@@ -3,17 +3,18 @@
     <div class="span12">
       <ol>
       <div class="question">
-        <form action="">
+        <form action="/survey/<%= @survey.id %>/submit" method="post">
           <%@survey.questions.each do |question|%>
-          <li><h3><%= question.question %></h3></li>
-          <ol>
-          <% question.choices.each do |choice| %>
-            <li class="choice"><input type="checkbox" id="checkbox"><h4><%= choice.content %></h4></li>
-          <% end %>
-          </ol>
-        </form>
+            <li><h3><%= question.question %></h3></li>
+            <ol>
+            <% question.choices.each do |choice| %>
+              <li class="choice"><input type="checkbox" name="<%= question.id %>" id="checkbox"><h4><%= choice.content %></h4></li>
+            <% end %>
+            </ol>
+            <input type='submit' value='Submit Survey'>
+          <% end %>  
+          </form>
       </div>
-      <% end %>
       </ol>
     </div>
   </div>
