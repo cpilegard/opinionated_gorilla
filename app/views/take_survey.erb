@@ -5,18 +5,19 @@
           <% if @survey.photo %>
             <img src='<%= @survey.photo.file %>'><br><br>
           <% end %>
-       <br>     
-       <h2><%= @survey.title %>:</h2>
+       <ol>
        <form action='/survey/<%= @survey.id %>/submit' method='post'>
        <%@survey.questions.each do |question|%>
-        <h3><%= question.question %></h3>
+        <li><h3><%= question.question %></h3></li>
          <% question.choices.each do |choice| %>
-          <input type="radio" name="<%= question.id %>" value='<%= choice.id %>'><%= choice.content %><br>
+          <input class="button" type="radio" name="<%= question.id %>" value='<%= choice.id %>'><h5><%= choice.content %></h5>
+          <br>
          <% end %>
        <% end %>
        <br>
        <input type='submit' value='Submit Survey'>
        </form>
+       </ol>
      </div>
    </div>
  </div>
