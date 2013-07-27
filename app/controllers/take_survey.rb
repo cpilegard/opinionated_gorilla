@@ -9,7 +9,8 @@ post '/survey/:id/submit' do
   survey.questions.each do |question|
     chosen = Choice.find(params["#{question.id}"].to_i)
     UserChoice.create(user: current_user, choice: chosen)
+    
   end
-
+  CompletedSurvey.create(survey_id: survey.id, user_id: current_user.id)
   redirect '/'
 end
