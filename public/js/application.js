@@ -2,7 +2,7 @@ $(document).ready(function() {
 	// $choiceField = $('.question_choice').clone();
 	var choice_list = $('.choices');
 
-  $('input').iCheck();
+  // $('input').iCheck();
 
   $('#add-choice').on('click', function(e) {
   	e.preventDefault();
