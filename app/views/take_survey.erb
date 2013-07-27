@@ -6,6 +6,7 @@
             <img src='<%= @survey.photo.file %>'><br><br>
           <% end %>
        <br>     
+       <h2><%= @survey.title %>:</h2>
        <form action='/survey/<%= @survey.id %>/submit' method='post'>
        <%@survey.questions.each do |question|%>
         <h3><%= question.question %></h3>

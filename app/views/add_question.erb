@@ -3,8 +3,21 @@
   	<div class='survey_title'>
   		<h3><%= @survey.title %></h3>
   	</div>
+
+  <% if @question.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% @question.errors.full_messages.each do |error| %>
+          <li>
+            <%= error %>
+          </li>
+        <% end %>
+    </ul>
+    </div>
+  <% end%>
+
   	<div class='survey_question'>
-  		<p>Question: <input type='text' name='question'></p>
+  		<p>Question: <input type='text' name='question' value="<%= @question.question %>" /></p>
   		<ul class='choices'>
   			<li class='question_choice'>
   				<p>Choice: <input type='text' name='choices[][choice]'></p>

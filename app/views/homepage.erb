@@ -6,7 +6,8 @@
   
     <h1>Welcome to Opinionated Guerilla!</h1>
 
-    <p>Number of surveys taken today:</p>
+  <p>Number of surveys taken today:</p>
+    <%= CompletedSurvey.where("created_at > ?", DateTime.now.beginning_of_day).count %>
 
     <h3>Take a current survey:</h3>
     <ul>

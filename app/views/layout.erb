@@ -85,6 +85,11 @@
 </div>
 <% end %>
 <body>
+  <% if @flash_alert %>
+      <div class="alert alert-danger">
+        <%= @flash_alert %>
+      </div>
+  <% end %>
   <%= yield %>
 </body>
 </html>
