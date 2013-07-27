@@ -1,6 +1,10 @@
 <div class="container-fluid">
    <div class="row-fluid">
      <div class="span12">
+        <h1><%= @survey.title %></h1>
+          <% if @survey.photo %>
+            <img src='<%= @survey.photo.file %>'><br><br>
+          <% end %>
        <br>     
        <h2><%= @survey.title %>:</h2>
        <form action='/survey/<%= @survey.id %>/submit' method='post'>
