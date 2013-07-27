@@ -10,9 +10,14 @@ get '/' do
 end
 
 post '/users' do
-  user = User.create(email: params[:email], password: params[:password])
-  session[:user_id] = user.id
-  redirect "/sessions/new"
+  user = User.new(email: params[:email], password: params[:password])
+  if user.save
+    session[:user_id] = user.id
+    redirect "/sessions/new"
+  else
+    @flash_alert = "Could not create user! <br />" + user.errors.full_messages.join("<br />")
+    erb :index
+  end
 end
 
 get '/users/:id' do |id|

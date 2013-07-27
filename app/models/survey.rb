@@ -3,4 +3,5 @@ class Survey < ActiveRecord::Base
   has_many :questions
   has_many :completed_surveys
   has_many :users, through: :completed_surveys
+  validates :title, presence: true, uniqueness: {case_sensitive: false, scope: :user_id }
 end

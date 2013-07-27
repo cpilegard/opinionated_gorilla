@@ -2,6 +2,7 @@
    <div class="row-fluid">
      <div class="span12">
        <br>     
+       <h2><%= @survey.title %>:</h2>
        <form action='/survey/<%= @survey.id %>/submit' method='post'>
        <%@survey.questions.each do |question|%>
         <h3><%= question.question %></h3>
