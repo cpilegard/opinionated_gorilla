@@ -55,3 +55,7 @@ h4 {
 .taken_survey {
   text-decoration: line-through;
 }
+
+.thumbnail {
+  display: inline;
+}
