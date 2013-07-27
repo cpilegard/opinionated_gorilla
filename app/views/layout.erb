@@ -18,7 +18,74 @@
   <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 
   <title>Opinionated Guerilla</title>
-</head>
+</head> 
+<% if logged_in? %> 
+<div class="container">
+  <div class="row" id="page_top">
+    <div class="span12">
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <a class="brand" href="#">Opinionated Guerilla</a>
+          <ul class="nav">
+            <li><a href="/sessions/new">Home</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="/users/<%= current_user.id %>">My Dashboard</a></li>
+            <li><a href="/sessions/end">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<% else %>
+<div class="container">
+  <div class="row" id="page_top">
+    <div class="span12">
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <a class="brand" href="#">Opinionated Guerilla</a>
+          <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">How It Works</a></li>
+          </ul>
+          <ul class="nav right_side_of_nav" id="login">
+           <li ><a class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" href="#">Login</a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <li>
+                <form id="login" action="/sessions" method="post" />
+                <input type="email" name="email" placeholder="Email" />
+                <input type="password" name="password" placeholder="Password" />
+                <input type="submit" class="btn" value="Login" />
+              </form>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav right_side_of_nav" id="create">
+        <li><a class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" href="#">Create Account</a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+            <li>
+              <form id="sign_up" action="/users" method="post" />
+              <input type="email" name="email" placeholder="Email" />
+              <input type="password" name="password" placeholder="Password" />
+              <input type="submit" class="btn" value="Create" />
+            </form>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+
+  </div>
+</div>
+</div>
+</div>
+</div>
+<% end %>
 <body>
   <%= yield %>
 </body>

@@ -1,0 +1,13 @@
+<div>
+  <h1>Welcome to Opinionated Guerilla!</h1>
+
+<p>Number of surveys taken today:</p>
+
+<h3>Take a current survey:</h3>
+<ul>
+  <% Survey.all.each do |survey| %>
+  <a href="/survey/<%= survey.id %>"><li><%= survey.title %></li></a>
+  <% end %>
+</ul>
+
+</div>
