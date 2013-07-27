@@ -11,7 +11,11 @@
     <h3>Take a current survey:</h3>
     <ul>
     <% Survey.all.each do |survey| %>
-      <a href="/survey/<%= survey.id %>/take"><li><%= survey.title %></li></a>
+    	<% if taken_survey?(survey) %>
+    		<li class='taken_survey'><%= survey.title %></li>
+    	<% else %>
+      	<a href="/survey/<%= survey.id %>/take"><li><%= survey.title %></li></a>
+      <% end %>
     <% end %>
     </ul>
     </div>
