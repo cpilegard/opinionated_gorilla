@@ -1,14 +1,20 @@
-<div class="container">
-  <div class="row">
+<div class="container-fluid">
+  <div class="row-fluid">
     <div class="span12">
-      <br>
-      <%@survey.questions.each do |question|%>
-        <%= question.question %>
-        <% question.choices.each do |choice| %>
-          <br>
-          <%= choice.content %>  
-        <% end %>
+      <ol>
+      <div class="question">
+        <form action="">
+          <%@survey.questions.each do |question|%>
+          <li><h3><%= question.question %></h3></li>
+          <ol>
+          <% question.choices.each do |choice| %>
+            <li class="choice"><input type="checkbox" id="checkbox"><h4><%= choice.content %></h4></li>
+          <% end %>
+          </ol>
+        </form>
+      </div>
       <% end %>
+      </ol>
     </div>
   </div>
 </div>

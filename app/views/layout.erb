@@ -9,19 +9,21 @@
   <link rel="stylesheet" href="/css/normalize.css">
   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/application.css">
+  <link href="/css/blue.css" rel="stylesheet">
   <!--
     application.css is where you put your styles
   -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="http:/js/application.js"></script>
-  <script src="http:/js/hover_menu_bar.js"></script>
+  <script src="/js/application.js"></script>
+  <script src="/js/hover_menu_bar.js"></script>
+  <script src="/js/jquery.icheck.js"></script>
   <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 
   <title>Opinionated Guerilla</title>
 </head> 
 <% if logged_in? %> 
-<div class="container">
-  <div class="row" id="page_top">
+<div class="container-fluid">
+  <div class="row-fluid" id="page_top">
     <div class="span12">
       <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
@@ -41,8 +43,8 @@
 
 
 <% else %>
-<div class="container">
-  <div class="row" id="page_top">
+<div class="container-fluid">
+  <div class="row-fluid" id="page_top">
     <div class="span12">
       <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">

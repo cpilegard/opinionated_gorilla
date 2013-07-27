@@ -1,12 +1,19 @@
-<div class="container">
-  <h1>Welcome to Opinionated Guerilla!</h1>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+      
+    
+  
+    <h1>Welcome to Opinionated Guerilla!</h1>
 
-  <p>Number of surveys taken today:</p>
+    <p>Number of surveys taken today:</p>
 
-  <h3>Take a current survey:</h3>
-  <ul>
+    <h3>Take a current survey:</h3>
+    <ul>
     <% Survey.all.each do |survey| %>
-    <a href="/survey/<%= survey.id %>/take"><li><%= survey.title %></li></a>
+      <a href="/survey/<%= survey.id %>/take"><li><%= survey.title %></li></a>
     <% end %>
-  </ul>
+    </ul>
+    </div>
+  </div>
 </div>

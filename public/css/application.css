@@ -1,4 +1,4 @@
-.container {
+.container-fluid {
   padding-top: 40px;
   /*width: 100%;*/
   /*background-color: rgba(21, 105, 199,.8);*/
@@ -35,4 +35,19 @@
 
 .dropdown-menu li {
   padding: 12px;
+}
+
+.choice{
+  list-style-type: none;
+}
+
+#checkbox {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+h4 {
+  margin-top: 6px;
+  display: inline;
 }
