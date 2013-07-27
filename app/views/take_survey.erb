@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <br>
+      <%@survey.questions.each do |question|%>
+        <%= question.question %>
+        <% question.choices.each do |choice| %>
+          <br>
+          <%= choice.content %>  
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
