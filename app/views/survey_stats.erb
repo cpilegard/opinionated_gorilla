@@ -10,5 +10,7 @@
 			<li><%= choice.content %></li>
 		<% end %>
 	<% end %>
-  <br><p>[Todo: stats]</p>
+  <br>
+  Number of surveys submitted: <%= CompletedSurvey.find_all_by_survey_id(@survey.id).count %>
+  <p>[Todo: stats]</p>
 </div>
