@@ -4,7 +4,12 @@
 
   <ul class='list'>
     <% current_user.surveys.each do |survey| %>
-      <li>Survey: <a href="/survey/<%= survey.id %>"><%= survey.title %></a></li>
+      <li>
+      	Survey: <a href="/survey/<%= survey.id %>"><%= survey.title %></a>
+      	<% if survey.photo %>
+      		<img class='thumbnail' src='<%= survey.photo.file.thumb %>'>
+      	<% end %>
+      </li>
     <% end %>
   </ul>
 

@@ -17,6 +17,9 @@
     	<% else %>
       	<a href="/survey/<%= survey.id %>/take"><li><%= survey.title %></li></a>
       <% end %>
+      <% if survey.photo %>
+     		<img class='thumbnail' src='<%= survey.photo.file.thumb %>'>
+     	<% end %>
     <% end %>
     </ul>
     </div>

@@ -31,6 +31,7 @@ post "/sessions" do
     session[:user_id] = user.id
     redirect "/sessions/new"
   else
+    @flash_alert = "Could not log you in!"
     erb :index
   end
 end
