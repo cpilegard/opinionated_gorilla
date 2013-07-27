@@ -2,6 +2,7 @@ $(document).ready(function() {
 	// $choiceField = $('.question_choice').clone();
 	var choice_list = $('.choices');
 
+  // $('input').iCheck();
 
   $('#add-choice').on('click', function(e) {
   	e.preventDefault();
@@ -24,4 +25,5 @@ $(document).ready(function() {
   $('.dropdown-menu input, .dropdown-menu label').click(function(e) {
         e.stopPropagation();
     });
+
 });

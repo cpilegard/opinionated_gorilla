@@ -1,13 +1,24 @@
-<div class="container">
-  <h1>Welcome to Opinionated Guerilla!</h1>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+      
+    
+  
+    <h1>Welcome to Opinionated Guerilla!</h1>
 
   <p>Number of surveys taken today:</p>
     <%= CompletedSurvey.where("created_at > ?", DateTime.now.beginning_of_day).count %>
 
-  <h3>Take a current survey:</h3>
-  <ul>
+    <h3>Take a current survey:</h3>
+    <ul>
     <% Survey.all.each do |survey| %>
-    <a href="/survey/<%= survey.id %>/take"><li><%= survey.title %></li></a>
+    	<% if taken_survey?(survey) %>
+    		<li class='taken_survey'><%= survey.title %></li>
+    	<% else %>
+      	<a href="/survey/<%= survey.id %>/take"><li><%= survey.title %></li></a>
+      <% end %>
     <% end %>
-  </ul>
+    </ul>
+    </div>
+  </div>
 </div>
