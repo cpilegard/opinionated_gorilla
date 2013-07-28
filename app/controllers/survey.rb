@@ -27,15 +27,7 @@ post '/survey/:id/new' do
   p params
   @survey = Survey.find(params[:id])
   params[:questions].each do |question|
-    puts question
-    puts question['question']
-    puts question['choices']
-    question = @survey.questions.build(question: question['question'])
-    question['choices'].each do |choice|
-      question.choices.build(content: choice['content'])
-    end
-    question.save
-    puts question.errors.full_messages
+    @survey.questions.create(question)
   end
   # params[:choices].each do |choice|
   #   @question.choices.build(content: choice['choice'])
@@ -45,7 +37,7 @@ post '/survey/:id/new' do
   # else
   #   erb :add_question
   # end
-  "hi"
+  redirect to("/survey/#{@survey.id}")
 end
 
 post '/photo/:survey_id' do
