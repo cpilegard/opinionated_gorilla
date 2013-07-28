@@ -12,8 +12,4 @@ class Choice < ActiveRecord::Base
   	}
   end
 
-  def to_json
-  	as_json.to_json
-  end
-
 end
