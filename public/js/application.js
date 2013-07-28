@@ -1,15 +1,16 @@
 $(document).ready(function() {
-	// $choiceField = $('.question_choice').clone();
-	var choice_list = $('.choices');
+	var question_template = $('.question').clone().html();
+	var choice_template = $('.choice').clone().html();
 
-  // $('input').iCheck();
-
-  $('#add-choice').on('click', function(e) {
+  $('form').on('click', '.add-choice', function(e) {
   	e.preventDefault();
-  	$("<li class='question_choice'>\
-  		 <p>Choice: <input type='text' name='choices[][choice]'></p>\
-  		 </li>").appendTo(choice_list);
-  	// $choiceField.appendTo(choice_list);
+  	$(this).closest('.choices').append(choice_template);
+  	$(this).hide();
+  });
+
+  $('form').on('click', '#add-question', function(e) {
+  	e.preventDefault();
+  	$('.questions').append(question_template);
   });
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
@@ -25,8 +26,6 @@ $(document).ready(function() {
   $('.dropdown-menu input, .dropdown-menu label').click(function(e) {
         e.stopPropagation();
     });
-
-
   $('#loginModal').modal('show');
 
   $('#loginModal').modal({ backdrop: 'static', keyboard: true });
@@ -44,7 +43,17 @@ $(document).ready(function() {
     showFooterBtn($('#createBtn'));
     $('#modalCreate').fadeIn(1000);
   });
+});
 
+//chart stuff
+$(document).ready(function() {
+  $(".question-chart").each(function() {
+    var context = this.getContext("2d");
+    var myNewChart = new Chart(context);
+    var data = $(this).data("user-choices");
+    console.log(data)
+    myNewChart.Pie(data);
+  });
 });
 
 

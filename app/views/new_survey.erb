@@ -1,0 +1,41 @@
+<div class="container-fluid span6 offset3">
+  <h1>Create a New Survey</h1>
+  <% if @survey %>
+    <% if @survey.errors.any? %>
+  	  <div class="alert alert-danger">
+  	  	<ul>
+  	  		<% @survey.errors.full_messages.each do |error| %>
+  	  			<li>
+  	  				<%= error %>
+  	  			</li>
+  	  		<% end %>
+  		</ul>
+  	  </div>
+    <% end%>
+  <% end %>
+  <form action='/survey' method='post'>
+  	<div class='survey_title'>
+  		<h3>Survey Title: <input type='text' name='title'>
+  		</h3>
+  	</div>
+
+  	<div class='questions'>
+      <div class="question">
+        <p><h5>Question:</h5> <input type='text' name='questions_attributes[][question]'/></p>
+        <ul class='choices'>
+          <div class='choice'>
+            <li class='question_choice'>
+              <p>
+              Choice: <input type='text' name='questions_attributes[][choices_attributes][][content]'>
+              <button class="add-choice">add choice</button><br>
+              </p>
+            </li>
+          </div>
+        </ul>
+      </div>
+  	</div>
+
+    <button id="add-question">add question</button><br>
+  	<br><input class='btn btn-success' type='submit' value='Create Survey'>
+  </form>
+</div>
