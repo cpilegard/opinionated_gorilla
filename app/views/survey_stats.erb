@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid span6 offset3">
 	<h1><%= @survey.title %></h1>
 	<% if @survey.photo %>
 		<img src='<%= @survey.photo.file %>'><br><br>
@@ -9,19 +9,17 @@
   </div>
   <% end %>
   <h5>Share this Survey with others:</h5> <a href='/survey/<%=@survey.id%>/take'>/survey/<%=@survey.id%>/take</a>
-  <div class="add_question">
-	   <a href='/survey/<%= @survey.id %>/new'>Add Question</a>
-  </div>
-	<% if !@survey.questions.empty? %>
-		<h3>Questions:</h3>
-	<% end %>
 	<% @survey.questions.each do |question| %>
-		<h5><%= question.question %></h5>
-		<% question.choices.each do |choice| %>
-			<li><%= choice.content %></li>
-		<% end %>
+		<div> 
+			<div class="question-content">
+				<h5><%= question.question %></h5>
+				<% question.choices.each do |choice| %>
+					<li><%= choice.content %> -- <%= choice_percentage(choice)%>%</li>
+				<% end %>
+			</div>
+			<canvas id="question-chart-<%= question.id %>" class="question-chart" data-user-choices='<%= question.to_json %>'></canvas>
+		</div>
 	<% end %>
   <br>
-  Number of surveys submitted: <%= CompletedSurvey.find_all_by_survey_id(@survey.id).count %>
-  <p>[Todo: stats]</p>
+  Total number of surveys submitted: <%= completed_survey_count(@survey.id) %>
 </div>

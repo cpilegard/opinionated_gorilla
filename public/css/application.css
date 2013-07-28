@@ -1,7 +1,7 @@
 .container-fluid {
-  padding-top: 40px;
-  /*width: 100%;*/
-  /*background-color: rgba(21, 105, 199,.8);*/
+  padding-top: 20px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .navbar-inner {
@@ -52,6 +52,16 @@ h5 {
 
 .thumbnail {
   display: inline;
+}
+
+.question-content {
+  float: left;
+  min-width: 200px;
+}
+
+.question-chart {
+  width:150px;
+  height:150px;
 }
 
 #loginModal {
@@ -122,3 +132,13 @@ h5 {
 .gorilla {
   background-image: url('../images/gorilla.jpg');
 }
+
+.hero-unit {
+  background: rgba(100, 100, 100, .3);
+  color: #CC0000;
+}
+
+.hero-unit p {
+  color: #FFCC66;
+}
+
