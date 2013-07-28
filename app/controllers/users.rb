@@ -1,4 +1,6 @@
-enable :sessions
+not_found do
+  erb :not_found_page
+end
 
 get '/' do
   # Look in app/views/index.erb
