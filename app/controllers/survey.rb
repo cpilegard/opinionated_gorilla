@@ -26,7 +26,17 @@ end
 post '/survey/:id/new' do
   p params
   @survey = Survey.find(params[:id])
-  @survey.questions.build(params)
+  params[:questions].each do |question|
+    puts question
+    puts question['question']
+    puts question['choices']
+    question = @survey.questions.build(question: question['question'])
+    question['choices'].each do |choice|
+      question.choices.build(content: choice['content'])
+    end
+    question.save
+    puts question.errors.full_messages
+  end
   # params[:choices].each do |choice|
   #   @question.choices.build(content: choice['choice'])
   # end
@@ -35,6 +45,7 @@ post '/survey/:id/new' do
   # else
   #   erb :add_question
   # end
+  "hi"
 end
 
 post '/photo/:survey_id' do
