@@ -3,6 +3,7 @@ not_found do
 end
 
 get '/' do
+  send_simple_message("TomJohnson", "jesseclay@gmail.com", "http://localhost:9393/survey/1/take")
   # Look in app/views/index.erb
     if logged_in?
       erb :homepage

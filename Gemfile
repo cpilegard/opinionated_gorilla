@@ -24,6 +24,8 @@ gem 'bcrypt-ruby'
 
 gem 'sinatra-partial'
 
+gem 'rest-client'
+
 group :test do
   gem 'faker'
   gem 'rspec'
