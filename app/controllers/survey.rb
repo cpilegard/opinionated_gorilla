@@ -19,21 +19,24 @@ end
 
 get '/survey/:id/new' do
   @survey = Survey.find(params[:id])
-  @question = Question.new
+  # @question = Question.new
   erb :add_question
 end
 
 post '/survey/:id/new' do
-  @survey = Survey.find(params[:id])
-  @question = @survey.questions.build(question: params[:question])
-  params[:choices].each do |choice|
-    @question.choices.build(content: choice['choice'])
-  end
-  if @question.save
-    redirect to("/survey/#{@survey.id}")
-  else
-    erb :add_question
-  end
+  p params
+  # puts "XXXXXXXXXXXXxxxxxxxxxxxxxxxxhfdhxgxgfxggxgxfxggfxxxxfxfxxxxxx======"
+  # p params
+  # @survey = Survey.find(params[:id])
+  # @question = @survey.questions.build(question: params[:question])
+  # params[:choices].each do |choice|
+  #   @question.choices.build(content: choice['choice'])
+  # end
+  # if @question.save
+  #   redirect to("/survey/#{@survey.id}")
+  # else
+  #   erb :add_question
+  # end
 end
 
 post '/photo/:survey_id' do

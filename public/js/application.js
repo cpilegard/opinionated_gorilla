@@ -1,15 +1,15 @@
 $(document).ready(function() {
-	// $choiceField = $('.question_choice').clone();
-	var choice_list = $('.choices');
+	$question_template = $('#question_template div:first-child').clone();
+	$choice_template = $('#choice_template li:first-child').clone();
 
-  // $('input').iCheck();
-
-  $('#add-choice').on('click', function(e) {
+  $('.container').on('click', '.add-choice', function(e) {
   	e.preventDefault();
-  	$("<li class='question_choice'>\
-  		 <p>Choice: <input type='text' name='choices[][choice]'></p>\
-  		 </li>").appendTo(choice_list);
-  	// $choiceField.appendTo(choice_list);
+  	$(this).closest('.choices').append($choice_template.clone());
+  });
+
+  $('.container').on('click', '#add-question', function(e) {
+  	e.preventDefault();
+  	$('.questions').append($question_template.clone());
   });
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
