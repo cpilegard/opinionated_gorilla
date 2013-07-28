@@ -1,0 +1,28 @@
+<div id="loginModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-header">
+    <h3 id="myModalLabel">Welcome to Opinionated Guerilla!</h3>
+  </div>
+    <p>You've been invited to take a survey, but it appears you don't have an Opinionated Guerilla account or aren't logged in.</p>
+    <p>Which would you like to do?</p>
+  <div id="modalLogin" class="modalForm">
+    <form id="login" action="/sessions" method="post" />
+      <input type="email" name="email" placeholder="Email" required/>
+      <input type="password" name="password" placeholder="Password" required/>
+      <input type="hidden" name="taking_survey_id" value="<%=survey_id%>"/>
+      <input type="submit" class="btn btn-primary login" value="Login" required/>
+    </form>
+  </div> 
+  <div id="modalCreate" class="modalForm">
+    <form id="sign_up" action="/users" method="post" required/>
+      <input type="email" name="email" placeholder="Email" required/>
+      <input type="password" name="password" placeholder="Password" required/>
+      <input type="hidden" name="taking_survey_id" value="<%=survey_id%>"/>
+      <input type="submit" class="btn btn-primary create" value="Create" required/>
+    </form>
+  </div>
+  <div class="modalButtons">
+    <button id="loginBtn" class="btn btn-primary login">Login</button>
+    <h8>or</h8>
+    <button id="createBtn" class="btn btn-primary create">Create Account</button>
+  </div>
+</div>
