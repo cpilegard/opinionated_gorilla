@@ -22,6 +22,8 @@ gem 'mini_magick'
 
 gem 'bcrypt-ruby'
 
+gem 'sinatra-partial'
+
 group :test do
   gem 'faker'
   gem 'rspec'
