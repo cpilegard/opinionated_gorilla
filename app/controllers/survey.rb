@@ -1,12 +1,18 @@
 get '/survey/new' do
   @survey = Survey.new
-  erb :create_survey
+  erb :new_survey
 end
 
 post '/survey' do
-  @survey = current_user.surveys.new(title: params[:title])
-  if @survey.save
-    redirect to("/survey/#{@survey.id}/new")
+  p params
+  @survey = current_user.surveys.create(title: params[:title])
+
+  params[:questions].each do |question|
+    @survey.questions.create(question)
+  end
+
+  if @survey.errors.empty?
+    redirect to("/survey/#{@survey.id}")
   else
     erb :create_survey
   end
@@ -19,7 +25,6 @@ end
 
 get '/survey/:id/new' do
   @survey = Survey.find(params[:id])
-  # @question = Question.new
   erb :add_question
 end
 

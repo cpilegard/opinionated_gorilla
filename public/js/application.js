@@ -6,12 +6,12 @@ $(document).ready(function() {
 	var q_temp = $('#question_template').html();
 	var c_temp = $('#choice_template').html();
 
-  $('.container').on('click', '.add-choice', function(e) {
+  $('form').on('click', '.add-choice', function(e) {
   	e.preventDefault();
   	$(this).closest('.choices').append(c_temp);
   });
 
-  $('.container').on('click', '#add-question', function(e) {
+  $('form').on('click', '#add-question', function(e) {
   	e.preventDefault();
   	// $('.questions').append($question_template);
   	$('.questions').append(q_temp);
