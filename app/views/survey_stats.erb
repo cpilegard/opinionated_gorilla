@@ -16,12 +16,17 @@
 		<h3>Questions:</h3>
 	<% end %>
 	<% @survey.questions.each do |question| %>
-		<h5><%= question.question %></h5>
-		<% question.choices.each do |choice| %>
-			<li><%= choice.content %></li>
-		<% end %>
+		<div> 
+			<div class="question-content">
+				<h5><%= question.question %></h5>
+				<% question.choices.each do |choice| %>
+					<li><%= choice.content %> -- <%= choice_percentage(choice)%>%</li>
+				<% end %>
+			</div>
+			<canvas id="question-chart-<%= question.id %>" class="question-chart" data-user-choices='<%= question.to_json %>'></canvas>
+		</div>
 	<% end %>
   <br>
-  Number of surveys submitted: <%= CompletedSurvey.find_all_by_survey_id(@survey.id).count %>
+  Number of surveys submitted: <%= completed_survey_count(@survey.id) %>
   <p>[Todo: stats]</p>
 </div>

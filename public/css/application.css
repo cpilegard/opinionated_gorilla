@@ -56,3 +56,14 @@ h5 {
 .thumbnail {
   display: inline;
 }
+
+
+.question-content {
+  float: left;
+  min-width: 200px;
+}
+
+.question-chart {
+  width:150px;
+  height:150px;
+}

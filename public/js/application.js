@@ -25,5 +25,15 @@ $(document).ready(function() {
   $('.dropdown-menu input, .dropdown-menu label').click(function(e) {
         e.stopPropagation();
     });
+});
 
+//chart stuff
+$(document).ready(function() {
+  $(".question-chart").each(function() {
+    var context = this.getContext("2d");
+    var myNewChart = new Chart(context);
+    var data = $(this).data("user-choices");
+    console.log(data)
+    myNewChart.Pie(data);
+  });
 });
