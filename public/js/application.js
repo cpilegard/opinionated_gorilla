@@ -1,10 +1,6 @@
 $(document).ready(function() {
-	// $question_template = $('#question_template div:first-child');
-	// $choice_template = $('#choice_template li:first-child');
-	// var q_temp = $.extend({}, $('#question_template div:first-child'));
-	// var c_temp = $.extend({}, $('#choice_template li:first-child'));
-	var q_temp = $('#question_template').html();
-	var c_temp = $('#choice_template').html();
+	var question_template = $('.question').clone().html();
+	var choice_template = $('.choice').clone().html();
 
   $('form').on('click', '.add-choice', function(e) {
   	e.preventDefault();
@@ -13,8 +9,7 @@ $(document).ready(function() {
 
   $('form').on('click', '#add-question', function(e) {
   	e.preventDefault();
-  	// $('.questions').append($question_template);
-  	$('.questions').append(q_temp);
+  	$('.questions').append(question_template);
   });
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
