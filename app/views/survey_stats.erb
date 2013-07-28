@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid span6 offset3">
 	<h1><%= @survey.title %></h1>
 	<% if @survey.photo %>
 		<img src='<%= @survey.photo.file %>'><br><br>
@@ -9,12 +9,6 @@
   </div>
   <% end %>
   <h5>Share this Survey with others:</h5> <a href='/survey/<%=@survey.id%>/take'>/survey/<%=@survey.id%>/take</a>
-  <div class="add_question">
-	   <a href='/survey/<%= @survey.id %>/new'>Add Question</a>
-  </div>
-	<% if !@survey.questions.empty? %>
-		<h3>Questions:</h3>
-	<% end %>
 	<% @survey.questions.each do |question| %>
 		<div> 
 			<div class="question-content">
