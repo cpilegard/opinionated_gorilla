@@ -1,13 +1,12 @@
 get '/survey/new' do
-  @survey = Survey.new
   erb :new_survey
 end
 
 post '/survey' do
   p params
-  @survey = current_user.surveys.create(params)
+  @survey = current_user.surveys.new(params)
 
-  if @survey.errors.empty?
+  if @survey.save
     redirect to("/survey/#{@survey.id}")
   else
     erb :new_survey
@@ -17,11 +16,6 @@ end
 get '/survey/:id' do
   @survey = Survey.find(params[:id])
   erb :survey_stats
-end
-
-get '/survey/:id/new' do
-  @survey = Survey.find(params[:id])
-  erb :add_question
 end
 
 post '/photo/:survey_id' do
