@@ -5,6 +5,7 @@ $(document).ready(function() {
   $('form').on('click', '.add-choice', function(e) {
   	e.preventDefault();
   	$(this).closest('.choices').append(choice_template);
+  	$(this).hide();
   });
 
   $('form').on('click', '#add-question', function(e) {
