@@ -25,10 +25,8 @@ end
 
 post '/survey/:id/new' do
   p params
-  # puts "XXXXXXXXXXXXxxxxxxxxxxxxxxxxhfdhxgxgfxggxgxfxggfxxxxfxfxxxxxx======"
-  # p params
-  # @survey = Survey.find(params[:id])
-  # @question = @survey.questions.build(question: params[:question])
+  @survey = Survey.find(params[:id])
+  @survey.questions.build(params)
   # params[:choices].each do |choice|
   #   @question.choices.build(content: choice['choice'])
   # end
