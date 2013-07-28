@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   $('form').on('click', '.add-choice', function(e) {
   	e.preventDefault();
-  	$(this).closest('.choices').append(c_temp);
+  	$(this).closest('.choices').append(choice_template);
   });
 
   $('form').on('click', '#add-question', function(e) {
