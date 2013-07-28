@@ -18,7 +18,8 @@ helpers do
     if survey_count == 0
       0
     else
-      (choice.user_choices.count.to_f/survey_count) * 100
+      value = (choice.user_choices.count.to_f/survey_count) * 100
+      sprintf("%.1f",value)
     end
   end
 
