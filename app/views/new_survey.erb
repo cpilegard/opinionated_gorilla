@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid span6 offset3">
   <h1>Create a New Survey</h1>
   <% if @survey %>
     <% if @survey.errors.any? %>
@@ -21,7 +21,7 @@
 
   	<div class='questions'>
       <div class="question">
-        <p>Question: <input type='text' name='questions_attributes[][question]'/></p>
+        <p><h5>Question:</h5> <input type='text' name='questions_attributes[][question]'/></p>
         <ul class='choices'>
           <div class='choice'>
             <li class='question_choice'>
