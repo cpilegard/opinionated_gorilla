@@ -28,5 +28,5 @@ post '/photo/:survey_id' do
 end
 
 post '/survey/:id/invite' do
-  send_invite_message(params[:to], current_user.email, "http://www.opinionatedguerilla.com/survey/" + params[:id].to_s + "/take")
+  send_invite_message(current_user.email, params[:to], "http://www.opinionatedguerilla.com/survey/" + params[:id].to_s + "/take")
 end
