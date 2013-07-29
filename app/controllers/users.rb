@@ -15,12 +15,12 @@ post '/users' do
   user = User.new(email: params[:email], password: params[:password])
   if user.save
     session[:user_id] = user.id
-    if params[:taking_survey]
-      redirect "/survey/" + params[:taking_survey].to_s + "/take" #redirects to the survey they tried to take via link
+    if params[:taking_survey_id]
+      redirect "/survey/" + params[:taking_survey_id].to_s + "/take" #redirects to the survey they tried to take via link
     end
     redirect "/sessions/new"
   else
-    @flash_alert = "Could not create user! <br />" + user.errors.full_messages.join("<br />")
+    @flash_alert = "Could not create user! <br/>" + user.errors.full_messages.join("<br />")
     erb :index
   end
 end
