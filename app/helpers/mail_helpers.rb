@@ -1,4 +1,4 @@
-def send_simple_message(from, to, link)
+def send_invite_message(from, to, link)
   RestClient.post "https://api:key-2qz-jddfyukt07yw7p6sxv07-wubrra8"\
   "@api.mailgun.net/v2/opinionatedguerilla.mailgun.org/messages",
   :from => "Opinionated Guerilla <me@opinionatedguerilla.mailgun.org>",

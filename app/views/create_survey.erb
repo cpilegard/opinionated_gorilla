@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <h1>Create a New Survey</h1>
+  <% if @survey.errors.any? %>
+	  <div class="alert alert-danger">
+	  	<ul>
+	  		<% @survey.errors.full_messages.each do |error| %>
+	  			<li>
+	  				<%= error %>
+	  			</li>
+	  		<% end %>
+		</ul>
+	  </div>
+  <% end%>
+  <form action='/survey' method='post'>
+  	<div class='survey_title'>
+  		<h3>Survey Title: <input type='text' name='title' value="<%= @survey.title %>"></h3>
+  	</div>
+  	<input type='submit' value='Create and Add Questions'>
+  </form>
+</div>

@@ -43,6 +43,23 @@ $(document).ready(function() {
     showFooterBtn($('#createBtn'));
     $('#modalCreate').fadeIn(1000);
   });
+
+  $('#email_invite').on('submit', function(e) {
+    e.preventDefault();
+    $.ajax({
+      url: this.action,
+      method: this.method,
+      data: $(this).serialize()
+    }).done(function(msg) {
+      $('.email_survey').html("<p>Survey Successfuly Sent!</p>");
+    });
+  });
+
+  $('#email_survey_btn').on("click", function() {
+    $('#email_survey_btn').fadeOut(1000);
+    $('.email_survey').fadeIn(1000);
+  });
+
 });
 
 //chart stuff

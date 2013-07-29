@@ -8,7 +8,17 @@
     <%= erb :_add_photo %>
   </div>
   <% end %>
-  <h5>Share this Survey with others:</h5> <a href='/survey/<%=@survey.id%>/take'>/survey/<%=@survey.id%>/take</a>
+  <h5>Share this Survey with others via this link:</h5> <a href='/survey/<%=@survey.id%>/take'>/survey/<%=@survey.id%>/take</a>
+  <br>
+  <h5 class="btn btn primary create" id="email_survey_btn">Email this survey out</h5>
+  <br>
+  <br>
+  <div class="email_survey">
+    <form id="email_invite" action="/survey/<%=@survey.id%>/invite" method="post">
+      <textarea rows="8" placeholder="email addresses here" name="to"></textarea>
+      <input type="submit" class="btn btn-primary login" value="invite">
+    </form>
+  </div>
 	<% @survey.questions.each do |question| %>
 		<div> 
 			<div class="question-content">
