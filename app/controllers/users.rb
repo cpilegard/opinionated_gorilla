@@ -32,7 +32,7 @@ end
 
 post "/sessions" do
   user = User.find_by_email(params[:email])
-  if user.password == params[:password]
+  if !user.nil? && user.password == params[:password]
     session[:user_id] = user.id
     redirect "/survey/" + params[:taking_survey_id].to_s + "/take" if params[:taking_survey_id] #redirects to the survey they tried to take via link
     redirect "/sessions/new"

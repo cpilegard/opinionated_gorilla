@@ -26,3 +26,7 @@ post '/photo/:survey_id' do
   survey.photo = photo
   redirect "/survey/#{survey.id}"
 end
+
+post '/survey/:id/invite' do
+  send_invite_message(current_user.email, params[:to], "http://www.opinionatedguerilla.com/survey/" + params[:id].to_s + "/take")
+end

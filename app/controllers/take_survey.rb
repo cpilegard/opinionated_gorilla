@@ -1,7 +1,7 @@
 get '/survey/:id/take' do
   @survey = Survey.find_by_id(params[:id])
   if current_user
-    redirect '/' if current_user.completed_surveys.find_by_id(@survey) != nil
+    redirect '/' if current_user.completed_surveys.find_by_id(params[:id]) != nil
   end
   erb :take_survey
 end
